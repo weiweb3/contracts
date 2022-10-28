@@ -44,31 +44,31 @@ async function main() {
   const trustedForwarderAddress: string = trustedForwarder.address;
 
   // // Deploy TWRegistry
-  const thirdwebRegistry = await (
+  const weiweb3Registry = await (
     await ethers.getContractFactory("TWRegistry")
   ).deploy(trustedForwarderAddress, options);
-  // const thirdwebRegistry = await ethers.getContractAt("TWRegistry", "0x7c487845f98938Bb955B1D5AD069d9a30e4131fd");
-  console.log("Deploying TWRegistry at tx: ", thirdwebRegistry.deployTransaction?.hash);
-  await thirdwebRegistry.deployed();
-  console.log("TWRegistry address: ", thirdwebRegistry.address);
+  // const weiweb3Registry = await ethers.getContractAt("TWRegistry", "0x7c487845f98938Bb955B1D5AD069d9a30e4131fd");
+  console.log("Deploying TWRegistry at tx: ", weiweb3Registry.deployTransaction?.hash);
+  await weiweb3Registry.deployed();
+  console.log("TWRegistry address: ", weiweb3Registry.address);
 
   // Deploy TWFactory and TWRegistry
-  const thirdwebFactory = await (
+  const weiweb3Factory = await (
     await ethers.getContractFactory("TWFactory")
-  ).deploy(trustedForwarderAddress, thirdwebRegistry.address, options);
-  // const thirdwebFactory = await ethers.getContractAt("TWFactory", "0xd24b3de085CFd8c54b94feAD08a7962D343E6DE0");
-  console.log("Deploying TWFactory at tx: ", thirdwebFactory.deployTransaction?.hash);
-  await thirdwebFactory.deployed();
-  console.log("TWFactory address: ", thirdwebFactory.address);
+  ).deploy(trustedForwarderAddress, weiweb3Registry.address, options);
+  // const weiweb3Factory = await ethers.getContractAt("TWFactory", "0xd24b3de085CFd8c54b94feAD08a7962D343E6DE0");
+  console.log("Deploying TWFactory at tx: ", weiweb3Factory.deployTransaction?.hash);
+  await weiweb3Factory.deployed();
+  console.log("TWFactory address: ", weiweb3Factory.address);
 
   // Deploy TWFee
-  const thirdwebFee: TWFee = await ethers
+  const weiweb3Fee: TWFee = await ethers
     .getContractFactory("TWFee")
-    .then(f => f.deploy(trustedForwarderAddress, thirdwebFactory.address, options));
-  // const thirdwebFee = await ethers.getContractAt("TWFee", "0x8C4B615040Ebd2618e8fC3B20ceFe9abAfdEb0ea");
-  console.log("Deploying TWFee at tx: ", thirdwebFee.deployTransaction?.hash);
-  await thirdwebFee.deployed();
-  console.log("TWFee address: ", thirdwebFee.address);
+    .then(f => f.deploy(trustedForwarderAddress, weiweb3Factory.address, options));
+  // const weiweb3Fee = await ethers.getContractAt("TWFee", "0x8C4B615040Ebd2618e8fC3B20ceFe9abAfdEb0ea");
+  console.log("Deploying TWFee at tx: ", weiweb3Fee.deployTransaction?.hash);
+  await weiweb3Fee.deployed();
+  console.log("TWFee address: ", weiweb3Fee.address);
 
   // Deploy a test implementation: Drop721
   const drop721: DropERC721 = await ethers
@@ -100,7 +100,7 @@ async function main() {
   // Deploy a test implementation: TokenERC20
   const tokenERC20: TokenERC20 = await ethers
     .getContractFactory("TokenERC20")
-    .then(f => f.deploy(thirdwebFee.address, options))
+    .then(f => f.deploy(weiweb3Fee.address, options))
     .then(f => f.deployed());
   console.log("Deploying TokenERC20 at tx: ", tokenERC20.deployTransaction.hash);
   console.log("TokenERC20 address: ", tokenERC20.address);
@@ -109,7 +109,7 @@ async function main() {
   // Deploy a test implementation: TokenERC721
   const tokenERC721: TokenERC721 = await ethers
     .getContractFactory("TokenERC721")
-    .then(f => f.deploy(thirdwebFee.address, options))
+    .then(f => f.deploy(weiweb3Fee.address, options))
     .then(f => f.deployed());
   console.log("Deploying TokenERC721 at tx: ", tokenERC721.deployTransaction.hash);
   console.log("TokenERC721 address: ", tokenERC721.address);
@@ -118,7 +118,7 @@ async function main() {
   // Deploy a test implementation: TokenERC1155
   const tokenERC1155: TokenERC1155 = await ethers
     .getContractFactory("TokenERC1155")
-    .then(f => f.deploy(thirdwebFee.address, options))
+    .then(f => f.deploy(weiweb3Fee.address, options))
     .then(f => f.deployed());
   console.log("Deploying TokenERC1155 at tx: ", tokenERC1155.deployTransaction.hash);
   console.log("TokenERC1155 address: ", tokenERC1155.address);
@@ -126,7 +126,7 @@ async function main() {
 
   const split: Split = await ethers
     .getContractFactory("Split")
-    .then(f => f.deploy(thirdwebFee.address, options))
+    .then(f => f.deploy(weiweb3Fee.address, options))
     .then(f => f.deployed());
   console.log("Deploying Split at tx: ", split.deployTransaction.hash);
   console.log("Split address: ", split.address);
@@ -134,7 +134,7 @@ async function main() {
 
   const marketplace: Marketplace = await ethers
     .getContractFactory("Marketplace")
-    .then(f => f.deploy(nativeTokenWrapper[ethers.provider.network.chainId], thirdwebFee.address, options))
+    .then(f => f.deploy(nativeTokenWrapper[ethers.provider.network.chainId], weiweb3Fee.address, options))
     .then(f => f.deployed());
   console.log("Deploying Marketplace at tx: ", marketplace.deployTransaction.hash);
   console.log("Marketplace address: ", marketplace.address);
@@ -168,42 +168,42 @@ async function main() {
 
   // TODO Pack
 
-  const tx = await thirdwebFactory.multicall(
+  const tx = await weiweb3Factory.multicall(
     [
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [drop721.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [drop1155.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [drop20.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [tokenERC20.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [tokenERC721.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [tokenERC1155.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [split.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [marketplace.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [vote.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [multiwrap.address]),
-      thirdwebFactory.interface.encodeFunctionData("addImplementation", [sigdrop.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [drop721.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [drop1155.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [drop20.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [tokenERC20.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [tokenERC721.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [tokenERC1155.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [split.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [marketplace.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [vote.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [multiwrap.address]),
+      weiweb3Factory.interface.encodeFunctionData("addImplementation", [sigdrop.address]),
     ],
     options,
   );
   console.log("Adding implementations at tx: ", tx.hash);
   await tx.wait();
 
-  const tx2 = await thirdwebRegistry.grantRole(await thirdwebRegistry.OPERATOR_ROLE(), thirdwebFactory.address);
+  const tx2 = await weiweb3Registry.grantRole(await weiweb3Registry.OPERATOR_ROLE(), weiweb3Factory.address);
   await tx2.wait();
   console.log("grant role: ", tx2.hash);
 
   console.log("DONE. Now verifying contracts...");
 
-  await verify(thirdwebRegistry.address, [trustedForwarderAddress]);
-  await verify(thirdwebFactory.address, [trustedForwarderAddress, thirdwebRegistry.address]);
-  await verify(thirdwebFee.address, [trustedForwarderAddress, thirdwebFactory.address]);
+  await verify(weiweb3Registry.address, [trustedForwarderAddress]);
+  await verify(weiweb3Factory.address, [trustedForwarderAddress, weiweb3Registry.address]);
+  await verify(weiweb3Fee.address, [trustedForwarderAddress, weiweb3Factory.address]);
   await verify(drop721.address, []);
   await verify(drop1155.address, []);
   await verify(drop20.address, []);
-  await verify(tokenERC20.address, [thirdwebFee.address]);
-  await verify(tokenERC721.address, [thirdwebFee.address]);
-  await verify(tokenERC1155.address, [thirdwebFee.address]);
-  await verify(split.address, [thirdwebFee.address]);
-  await verify(marketplace.address, [nativeTokenWrapper[ethers.provider.network.chainId], thirdwebFee.address]);
+  await verify(tokenERC20.address, [weiweb3Fee.address]);
+  await verify(tokenERC721.address, [weiweb3Fee.address]);
+  await verify(tokenERC1155.address, [weiweb3Fee.address]);
+  await verify(split.address, [weiweb3Fee.address]);
+  await verify(marketplace.address, [nativeTokenWrapper[ethers.provider.network.chainId], weiweb3Fee.address]);
   await verify(vote.address, []);
   await verify(multiwrap.address, [nativeTokenWrapper[ethers.provider.network.chainId]]);
   await verify(sigdrop.address, []);

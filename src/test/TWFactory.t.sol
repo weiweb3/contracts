@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/utils/Create2.sol";
 import "@openzeppelin/contracts/proxy/Clones.sol";
 import "contracts/TWProxy.sol";
 // import "./utils/Console.sol";
-import "./mocks/MockThirdwebContract.sol";
+import "./mocks/MockWeiweb3Contract.sol";
 
 interface ITWFactoryData {
     event ProxyDeployed(address indexed implementation, address proxy, address indexed deployer);
@@ -28,7 +28,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
     address internal proxyDeployer2;
 
     // Test params
-    MockThirdwebContract internal mockModule;
+    MockWeiweb3Contract internal mockModule;
     address internal mockUnapprovedImplementation = address(0x5);
 
     //  =====   Set up  =====
@@ -41,7 +41,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
         proxyDeployer2 = getActor(11);
 
         vm.prank(factoryAdmin);
-        mockModule = new MockThirdwebContract();
+        mockModule = new MockWeiweb3Contract();
     }
 
     //  =====   Initial state   =====
@@ -74,7 +74,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
     }
 
     function test_addImplementation_directV2() public {
-        MockThirdwebContractV2 mockModuleV2 = new MockThirdwebContractV2();
+        MockWeiweb3ContractV2 mockModuleV2 = new MockWeiweb3ContractV2();
 
         bytes32 contractType = mockModuleV2.contractType();
         uint256 moduleVersion = mockModuleV2.contractVersion();
@@ -93,7 +93,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
         vm.prank(factoryAdmin);
         _factory.addImplementation(address(mockModule));
 
-        MockThirdwebContractV2 mockModuleV2 = new MockThirdwebContractV2();
+        MockWeiweb3ContractV2 mockModuleV2 = new MockWeiweb3ContractV2();
 
         bytes32 contractType = mockModuleV2.contractType();
         uint256 moduleVersion = mockModuleV2.contractVersion();
@@ -174,7 +174,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
         address deployedAddr = _factory.deployProxyByImplementation(address(mockModule), "", _salt);
 
         assertEq(deployedAddr, computedProxyAddr);
-        assertEq(mockModule.contractType(), MockThirdwebContract(computedProxyAddr).contractType());
+        assertEq(mockModule.contractType(), MockWeiweb3Contract(computedProxyAddr).contractType());
     }
 
     function test_deployProxyByImplementation_revert_invalidImpl() public {
@@ -223,7 +223,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
         address proxyAddr = _factory.deployProxyDeterministic(contractType, "", _salt);
 
         assertEq(proxyAddr, computedProxyAddr);
-        assertEq(mockModule.contractType(), MockThirdwebContract(computedProxyAddr).contractType());
+        assertEq(mockModule.contractType(), MockWeiweb3Contract(computedProxyAddr).contractType());
     }
 
     function test_deployProxyDeterministic_revert_invalidImpl(bytes32 _salt) public {
@@ -266,7 +266,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
         vm.prank(proxyDeployer);
         address proxyAddr = _factory.deployProxy(contractType, "");
 
-        assertEq(mockModule.contractType(), MockThirdwebContract(proxyAddr).contractType());
+        assertEq(mockModule.contractType(), MockWeiweb3Contract(proxyAddr).contractType());
     }
 
     function test_deployProxy_sameBlock() public {
@@ -279,7 +279,7 @@ contract TWFactoryTest is ITWFactoryData, BaseTest {
         address proxyAddr2 = _factory.deployProxy(contractType, "");
 
         assertTrue(proxyAddr != proxyAddr2);
-        assertEq(mockModule.contractType(), MockThirdwebContract(proxyAddr).contractType());
+        assertEq(mockModule.contractType(), MockWeiweb3Contract(proxyAddr).contractType());
     }
 
     function test_deployProxy_revert_invalidImpl() public {

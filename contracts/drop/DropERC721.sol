@@ -16,7 +16,7 @@ import "@openzeppelin/contracts-upgradeable/utils/StringsUpgradeable.sol";
 //  ==========  Internal imports    ==========
 
 import { IDropERC721 } from "../interfaces/drop/IDropERC721.sol";
-import "../interfaces/IThirdwebContract.sol";
+import "../interfaces/IWeiweb3Contract.sol";
 
 //  ==========  Features    ==========
 
@@ -33,7 +33,7 @@ import "../lib/MerkleProof.sol";
 
 contract DropERC721 is
     Initializable,
-    IThirdwebContract,
+    IWeiweb3Contract,
     IOwnable,
     IRoyalty,
     IPrimarySale,
@@ -60,7 +60,7 @@ contract DropERC721 is
     /// @dev Only MINTER_ROLE holders can lazy mint NFTs.
     bytes32 private constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
-    /// @dev Max bps in the thirdweb system.
+    /// @dev Max bps in the weiweb3 system.
     uint256 private constant MAX_BPS = 10_000;
 
     /// @dev Owner of the contract (purpose: OpenSea compatibility)

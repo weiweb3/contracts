@@ -1,14 +1,14 @@
 # Drop design document.
 
-This is a live document that explains what the [thirdweb](https://thirdweb.com/) `Drop` smart contracts are, how they work and can be used, and why they are written the way they are.
+This is a live document that explains what the [weiweb3](https://weiweb3.com/) `Drop` smart contracts are, how they work and can be used, and why they are written the way they are.
 
-The document is written for technical and non-technical readers. To ask further questions about any of thirdweb’s `Drop`, please join the [thirdweb discord](https://discord.gg/thirdweb) or create a github issue.
+The document is written for technical and non-technical readers. To ask further questions about any of weiweb3’s `Drop`, please join the [weiweb3 discord](https://discord.gg/weiweb3) or create a github issue.
 
 ---
 
 ## Background
 
-The thirdweb `Drop` contracts are distribution mechanisms for tokens. This distribution mechanism is offered for ERC20, ERC721 and ERC1155 tokens, as `DropERC20`, `DropERC721` and `DropERC1155`.
+The weiweb3 `Drop` contracts are distribution mechanisms for tokens. This distribution mechanism is offered for ERC20, ERC721 and ERC1155 tokens, as `DropERC20`, `DropERC721` and `DropERC1155`.
 
 The `Drop` contracts are meant to be used when the goal of the contract creator is for an audience to come in and claim tokens within certain restrictions e.g. — ‘only addresses in an allowlist can mint tokens’, or ‘minters must pay *x* amount of price in *y* currency to mint’, etc.
 
@@ -23,9 +23,9 @@ We’ve observed that there are largely three distinct contexts under which one 
     1. The nature of tokens to be minted by the audience is pre-determined by the contract admin. E.g. a 10k NFT drop where the contents of the NFTs to be minted by the audience is already known and determined by the contract admin before the audience comes in to mint NFTs.
     2. The nature of tokens to be minted by the audience is *not* pre-determined by the contract admin. E.g. a course ‘certificate’ dynamically generated with the name of the course participant, to be minted by the course participant at the time of course completion.
 
-The thirdweb `Token` contracts serve the cases described in (1) and 2(ii).
+The weiweb3 `Token` contracts serve the cases described in (1) and 2(ii).
 
-The thirdweb `Drop` contracts serve the case described in 2(i). They are written to give a contract creator granular control over restrictions around an audience minting tokens from the same contract (or ‘collection’, in the case of NFTs) over an extended period of time.
+The weiweb3 `Drop` contracts serve the case described in 2(i). They are written to give a contract creator granular control over restrictions around an audience minting tokens from the same contract (or ‘collection’, in the case of NFTs) over an extended period of time.
 
 ## Technical Details
 
@@ -140,7 +140,7 @@ require(block.timestamp >= nextValidClaimTimestamp);
 
 ### EIPs supported / implemented
 
-The distribution mechanism for tokens expressed by thirdweb’s `Drop` is implemented for ERC20, ERC721 and ERC1155 tokens, as `DropERC20`, `DropERC721` and `DropERC1155`.
+The distribution mechanism for tokens expressed by weiweb3’s `Drop` is implemented for ERC20, ERC721 and ERC1155 tokens, as `DropERC20`, `DropERC721` and `DropERC1155`.
 
 There are a few key differences between the three implementations —
 
@@ -149,10 +149,10 @@ There are a few key differences between the three implementations —
 
 ## Limitations
 
-The distribution mechanism of thirdweb’s `Drop` contracts is vulnerable to [sybil attacks](https://en.wikipedia.org/wiki/Sybil_attack). That is, despite the various ways in which restrictions can be applied to the minting of tokens, some restrictions that claim conditions can express target wallets and not persons.
+The distribution mechanism of weiweb3’s `Drop` contracts is vulnerable to [sybil attacks](https://en.wikipedia.org/wiki/Sybil_attack). That is, despite the various ways in which restrictions can be applied to the minting of tokens, some restrictions that claim conditions can express target wallets and not persons.
 
 For example, the restriction `waitTimeInSecondsBetweenClaims` expresses the least amount of time a *wallet* must wait, before claiming tokens again during the respective claim condition. A sophisticated actor may generate multiple wallets to claim tokens in a way that undermine such restrictions, when viewing such restrictions as restrictions on unique persons, and not wallets.
 
 ## Authors
 - [nkrishang](https://github.com/nkrishang)
-- [thirdweb team](https://github.com/thirdweb-dev)
+- [weiweb3 team](https://github.com/weiweb3)

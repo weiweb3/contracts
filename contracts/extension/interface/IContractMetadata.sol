@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 /**
- *  Thirdweb's `ContractMetadata` is a contract extension for any base contracts. It lets you set a metadata URI
+ *  Weiweb3's `ContractMetadata` is a contract extension for any base contracts. It lets you set a metadata URI
  *  for you contract.
  *
  *  Additionally, `ContractMetadata` is necessary for NFT contracts that want royalties to get distributed on OpenSea.

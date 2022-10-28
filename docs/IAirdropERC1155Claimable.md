@@ -4,7 +4,7 @@
 
 
 
-Thirdweb&#39;s `Airdrop` contracts provide a lightweight and easy to use mechanism  to drop tokens.  `AirdropERC1155Claimable` contract is an airdrop contract for ERC1155 tokens. It follows a  pull mechanism for transfer of tokens, where allowlisted recipients can claim tokens from  the contract.
+Weiweb3&#39;s `Airdrop` contracts provide a lightweight and easy to use mechanism  to drop tokens.  `AirdropERC1155Claimable` contract is an airdrop contract for ERC1155 tokens. It follows a  pull mechanism for transfer of tokens, where allowlisted recipients can claim tokens from  the contract.
 
 
 

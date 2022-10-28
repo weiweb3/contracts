@@ -1,22 +1,22 @@
 <p align="center">
 <br />
-<a href="https://thirdweb.com"><img src="https://github.com/thirdweb-dev/typescript-sdk/blob/main/logo.svg?raw=true" width="200" alt=""/></a>
+<a href="https://weiweb3.com"><img src="https://github.com/weiweb3/typescript-sdk/blob/main/logo.svg?raw=true" width="200" alt=""/></a>
 <br />
 </p>
-<h1 align="center">thirdweb Contracts</h1>
+<h1 align="center">weiweb3 Contracts</h1>
 <p align="center">
-<a href="https://www.npmjs.com/package/@thirdweb-dev/contracts"><img src="https://img.shields.io/npm/v/@thirdweb-dev/contracts?color=red&logo=npm" alt="npm version"/></a>
-<a href="https://github.com/thirdweb-dev/contracts/actions"><img alt="Build Status" src="https://github.com/thirdweb-dev/contracts/actions/workflows/tests.yml/badge.svg"/></a>
-<a href="https://discord.gg/thirdweb"><img alt="Join our Discord!" src="https://img.shields.io/discord/834227967404146718.svg?color=7289da&label=discord&logo=discord&style=flat"/></a>
+<a href="https://www.npmjs.com/package/@weiweb3/contracts"><img src="https://img.shields.io/npm/v/@weiweb3/contracts?color=red&logo=npm" alt="npm version"/></a>
+<a href="https://github.com/weiweb3/contracts/actions"><img alt="Build Status" src="https://github.com/weiweb3/contracts/actions/workflows/tests.yml/badge.svg"/></a>
+<a href="https://discord.gg/weiweb3"><img alt="Join our Discord!" src="https://img.shields.io/discord/834227967404146718.svg?color=7289da&label=discord&logo=discord&style=flat"/></a>
 
 </p>
-<p align="center"><strong>Collection of smart contracts deployable via the thirdweb SDK, dashboard and CLI</strong></p>
+<p align="center"><strong>Collection of smart contracts deployable via the weiweb3 SDK, dashboard and CLI</strong></p>
 <br />
 
 ## Installation
 
 ```shell
-npm i @thirdweb-dev/contracts
+npm i @weiweb3/contracts
 ```
 
 ## Running Tests
@@ -67,23 +67,23 @@ npx hardhat run scripts/{path to the script}
 
 ## Pre-built Contracts
 
-Pre-built contracts are written by the thirdweb team, and cover the most common use cases for smart contracts.
+Pre-built contracts are written by the weiweb3 team, and cover the most common use cases for smart contracts.
 
 Release pages for pre-built contracts:
 
-- [DropERC20](https://thirdweb.com/deployer.thirdweb.eth/DropERC20)
-- [DropERC721](https://thirdweb.com/deployer.thirdweb.eth/DropERC721)
-- [DropERC1155](https://thirdweb.com/deployer.thirdweb.eth/DropERC1155)
-- [SignatureDrop](https://thirdweb.com/deployer.thirdweb.eth/SignatureDrop)
-- [Marketplace](https://thirdweb.com/deployer.thirdweb.eth/Marketplace)
-- [Multiwrap](https://thirdweb.com/deployer.thirdweb.eth/Multiwrap)
-- [TokenERC20](https://thirdweb.com/deployer.thirdweb.eth/TokenERC20)
-- [TokenERC721](https://thirdweb.com/deployer.thirdweb.eth/TokenERC721)
-- [TokenERC1155](https://thirdweb.com/deployer.thirdweb.eth/TokenERC1155)
-- [VoteERC20](https://thirdweb.com/deployer.thirdweb.eth/VoteERC20)
-- [Split](https://thirdweb.com/deployer.thirdweb.eth/Split)
+- [DropERC20](https://weiweb3.com/deployer.weiweb3.eth/DropERC20)
+- [DropERC721](https://weiweb3.com/deployer.weiweb3.eth/DropERC721)
+- [DropERC1155](https://weiweb3.com/deployer.weiweb3.eth/DropERC1155)
+- [SignatureDrop](https://weiweb3.com/deployer.weiweb3.eth/SignatureDrop)
+- [Marketplace](https://weiweb3.com/deployer.weiweb3.eth/Marketplace)
+- [Multiwrap](https://weiweb3.com/deployer.weiweb3.eth/Multiwrap)
+- [TokenERC20](https://weiweb3.com/deployer.weiweb3.eth/TokenERC20)
+- [TokenERC721](https://weiweb3.com/deployer.weiweb3.eth/TokenERC721)
+- [TokenERC1155](https://weiweb3.com/deployer.weiweb3.eth/TokenERC1155)
+- [VoteERC20](https://weiweb3.com/deployer.weiweb3.eth/VoteERC20)
+- [Split](https://weiweb3.com/deployer.weiweb3.eth/Split)
 
-[Learn more about pre-built contracts](https://portal.thirdweb.com/pre-built-contracts)
+[Learn more about pre-built contracts](https://portal.weiweb3.com/pre-built-contracts)
 
 ## Extensions
 
@@ -93,11 +93,11 @@ Some blocks come packaged together as Base Contracts, which come with a full set
 
 Other (smaller) blocks are Features, which provide a way for you to pick and choose which individual pieces you want to put into your contract; with full customization of how those features work. These are available at `contracts/extension/`.
 
-[Learn more about extensions](https://portal.thirdweb.com/extensions)
+[Learn more about extensions](https://portal.weiweb3.com/extensions)
 
 ## Deployments
 
-The thirdweb registry (`TWRegistry`) and factory (`TWFactory`) have been deployed on the following chains:
+The weiweb3 registry (`TWRegistry`) and factory (`TWFactory`) have been deployed on the following chains:
 
 - [Ethereum mainnet](https://etherscan.io/)
 - [Rinkeby](https://rinkeby.etherscan.io/)
@@ -119,15 +119,15 @@ The thirdweb registry (`TWRegistry`) and factory (`TWFactory`) have been deploye
 
 ## Bug reports
 
-Found a security issue with our smart contracts? Send bug reports to security@thirdweb.com and we'll continue communicating with you from there. We're actively developing a bug bounty program; bug report payouts happen on a case by case basis, for now.
+Found a security issue with our smart contracts? Send bug reports to security@weiweb3.com and we'll continue communicating with you from there. We're actively developing a bug bounty program; bug report payouts happen on a case by case basis, for now.
 
 ## Feedback
 
-If you have any feedback, please reach out to us at support@thirdweb.com.
+If you have any feedback, please reach out to us at support@weiweb3.com.
 
 ## Authors
 
-- [thirdweb](https://thirdweb.com)
+- [weiweb3](https://weiweb3.com)
 
 ## License
 

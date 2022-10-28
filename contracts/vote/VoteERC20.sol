@@ -2,7 +2,7 @@
 pragma solidity ^0.8.11;
 
 // Base
-import "../interfaces/IThirdwebContract.sol";
+import "../interfaces/IWeiweb3Contract.sol";
 
 // Governance
 import "@openzeppelin/contracts-upgradeable/governance/GovernorUpgradeable.sol";
@@ -17,7 +17,7 @@ import "../openzeppelin-presets/metatx/ERC2771ContextUpgradeable.sol";
 
 contract VoteERC20 is
     Initializable,
-    IThirdwebContract,
+    IWeiweb3Contract,
     ERC2771ContextUpgradeable,
     GovernorUpgradeable,
     GovernorSettingsUpgradeable,

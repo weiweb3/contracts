@@ -13,5 +13,5 @@ jobs:
         uses: peter-evans/repository-dispatch@v1.1.3
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: thirdweb-dev/docs
+          repository: weiweb3/docs
           event-type: generate-docs

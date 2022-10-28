@@ -5,7 +5,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol";
 import "./IDropClaimCondition.sol";
 
 /**
- *  Thirdweb's 'Drop' contracts are distribution mechanisms for tokens. The
+ *  Weiweb3's 'Drop' contracts are distribution mechanisms for tokens. The
  *  `DropERC20` contract is a distribution mechanism for ERC20 tokens.
  *
  *  A contract admin (i.e. holder of `DEFAULT_ADMIN_ROLE`) can create claim conditions

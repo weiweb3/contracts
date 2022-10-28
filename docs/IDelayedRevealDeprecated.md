@@ -4,7 +4,7 @@
 
 
 
-Thirdweb&#39;s `DelayedReveal` is a contract extension for base NFT contracts. It lets you create batches of  &#39;delayed-reveal&#39; NFTs. You can learn more about the usage of delayed reveal NFTs here - https://blog.thirdweb.com/delayed-reveal-nfts
+Weiweb3&#39;s `DelayedReveal` is a contract extension for base NFT contracts. It lets you create batches of  &#39;delayed-reveal&#39; NFTs. You can learn more about the usage of delayed reveal NFTs here - https://blog.weiweb3.com/delayed-reveal-nfts
 
 
 

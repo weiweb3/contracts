@@ -4,7 +4,7 @@
 
 > Primary Sale
 
-Thirdweb&#39;s `PrimarySale` is a contract extension to be used with any base contract. It exposes functions for setting and reading           the recipient of primary sales, and lets the inheriting contract perform conditional logic that uses information about           primary sales, if desired.
+Weiweb3&#39;s `PrimarySale` is a contract extension to be used with any base contract. It exposes functions for setting and reading           the recipient of primary sales, and lets the inheriting contract perform conditional logic that uses information about           primary sales, if desired.
 
 
 

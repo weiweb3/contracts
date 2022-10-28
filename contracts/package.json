@@ -1,6 +1,6 @@
 {
   "name": "@weiweb3/contracts",
-  "description": "Collection of smart contracts deployable via the thirdweb SDK, dashboard and CLI",
+  "description": "Collection of smart contracts deployable via the weiweb3 SDK, dashboard and CLI",
   "version": "3.1.12",
   "license": "Apache-2.0",
   "repository": {
@@ -10,8 +10,8 @@
   "bugs": {
     "url": "https://github.com/weiweb3/contracts/issues"
   },
-  "author": "thirdweb engineering <eng@thirdweb.com>",
-  "homepage": "https://thirdweb.com",
+  "author": "weiweb3 engineering <eng@weiweb3.com>",
+  "homepage": "https://weiweb3.com",
   "files": [
     "**/*.sol",
     "/abi"

@@ -5,7 +5,7 @@ import "../../lib/TWBitMaps.sol";
 import "./IClaimCondition.sol";
 
 /**
- *  Thirdweb's 'Drop' contracts are distribution mechanisms for tokens.
+ *  Weiweb3's 'Drop' contracts are distribution mechanisms for tokens.
  *
  *  A contract admin (i.e. a holder of `DEFAULT_ADMIN_ROLE`) can set a series of claim conditions,
  *  ordered by their respective `startTimestamp`. A claim condition defines criteria under which

@@ -4,7 +4,7 @@
 
 
 
-The thirdweb `Pack` contract is a lootbox mechanism. An account can bundle up arbitrary ERC20, ERC721 and ERC1155 tokens into  a set of packs. A pack can then be opened in return for a selection of the tokens in the pack. The selection of tokens distributed  on opening a pack depends on the relative supply of all tokens in the packs.
+The weiweb3 `Pack` contract is a lootbox mechanism. An account can bundle up arbitrary ERC20, ERC721 and ERC1155 tokens into  a set of packs. A pack can then be opened in return for a selection of the tokens in the pack. The selection of tokens distributed  on opening a pack depends on the relative supply of all tokens in the packs.
 
 
 

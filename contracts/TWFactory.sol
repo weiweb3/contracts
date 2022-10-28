@@ -2,7 +2,7 @@
 pragma solidity ^0.8.11;
 
 import "./TWRegistry.sol";
-import "./interfaces/IThirdwebContract.sol";
+import "./interfaces/IWeiweb3Contract.sol";
 import "./extension/interface/IContractFactory.sol";
 
 import "@openzeppelin/contracts/access/AccessControlEnumerable.sol";
@@ -87,7 +87,7 @@ contract TWFactory is Multicall, ERC2771Context, AccessControlEnumerable, IContr
     function addImplementation(address _implementation) external {
         require(hasRole(FACTORY_ROLE, _msgSender()), "not admin.");
 
-        IThirdwebContract module = IThirdwebContract(_implementation);
+        IWeiweb3Contract module = IWeiweb3Contract(_implementation);
 
         bytes32 ctype = module.contractType();
         require(ctype.length > 0, "invalid module");

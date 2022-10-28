@@ -20,7 +20,7 @@ import "../extension/DelayedReveal.sol";
  *  'Delayed reveal' is a mechanism by which you can distribute NFTs to your audience and reveal the metadata of the distributed
  *  NFTs, after the fact.
  *
- *  You can read more about how the `DelayedReveal` extension works, here: https://blog.thirdweb.com/delayed-reveal-nfts
+ *  You can read more about how the `DelayedReveal` extension works, here: https://blog.weiweb3.com/delayed-reveal-nfts
  */
 
 contract ERC721DelayedReveal is ERC721LazyMint, DelayedReveal {

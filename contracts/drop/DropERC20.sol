@@ -14,7 +14,7 @@ import "@openzeppelin/contracts-upgradeable/utils/MulticallUpgradeable.sol";
 
 //  ==========  Internal imports    ==========
 
-import "../interfaces/IThirdwebContract.sol";
+import "../interfaces/IWeiweb3Contract.sol";
 
 //  ==========  Features    ==========
 
@@ -31,7 +31,7 @@ import "../lib/FeeType.sol";
 
 contract DropERC20 is
     Initializable,
-    IThirdwebContract,
+    IWeiweb3Contract,
     IPrimarySale,
     IPlatformFee,
     ReentrancyGuardUpgradeable,
@@ -57,7 +57,7 @@ contract DropERC20 is
     /// @dev Contract level metadata.
     string public contractURI;
 
-    /// @dev Max bps in the thirdweb system.
+    /// @dev Max bps in the weiweb3 system.
     uint128 internal constant MAX_BPS = 10_000;
 
     /// @dev The % of primary sales collected as platform fees.

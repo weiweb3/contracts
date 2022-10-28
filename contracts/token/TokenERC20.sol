@@ -4,7 +4,7 @@ pragma solidity ^0.8.11;
 //Interface
 import { ITokenERC20 } from "../interfaces/token/ITokenERC20.sol";
 
-import "../interfaces/IThirdwebContract.sol";
+import "../interfaces/IWeiweb3Contract.sol";
 import "../extension/interface/IPlatformFee.sol";
 import "../extension/interface/IPrimarySale.sol";
 
@@ -30,7 +30,7 @@ import "../lib/FeeType.sol";
 
 contract TokenERC20 is
     Initializable,
-    IThirdwebContract,
+    IWeiweb3Contract,
     IPrimarySale,
     IPlatformFee,
     ReentrancyGuardUpgradeable,
@@ -57,7 +57,7 @@ contract TokenERC20 is
     /// @dev Returns the URI for the storefront-level metadata of the contract.
     string public contractURI;
 
-    /// @dev Max bps in the thirdweb system
+    /// @dev Max bps in the weiweb3 system
     uint128 internal constant MAX_BPS = 10_000;
 
     /// @dev The % of primary sales collected by the contract as fees.

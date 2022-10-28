@@ -5,8 +5,8 @@ import "./interface/IDelayedReveal.sol";
 
 /**
  *  @title   Delayed Reveal
- *  @notice  Thirdweb's `DelayedReveal` is a contract extension for base NFT contracts. It lets you create batches of
- *           'delayed-reveal' NFTs. You can learn more about the usage of delayed reveal NFTs here - https://blog.thirdweb.com/delayed-reveal-nfts
+ *  @notice  Weiweb3's `DelayedReveal` is a contract extension for base NFT contracts. It lets you create batches of
+ *           'delayed-reveal' NFTs. You can learn more about the usage of delayed reveal NFTs here - https://blog.weiweb3.com/delayed-reveal-nfts
  */
 
 abstract contract DelayedReveal is IDelayedReveal {

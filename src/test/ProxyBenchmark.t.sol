@@ -10,7 +10,7 @@ import "contracts/TWRegistry.sol";
 import "contracts/TWProxy.sol";
 import "@openzeppelin/contracts/utils/Create2.sol";
 // import "./utils/Console.sol";
-import "./mocks/MockThirdwebContract.sol";
+import "./mocks/MockWeiweb3Contract.sol";
 
 contract TWProxyBenchmark is BaseTest {
     function setUp() public override {

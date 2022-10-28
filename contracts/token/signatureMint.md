@@ -1,14 +1,14 @@
 # Signature minting design document.
 
-This is a live document that explains the 'signature minting' mechanism used in [thirdweb](https://thirdweb.com/) `Token` smart contracts.
+This is a live document that explains the 'signature minting' mechanism used in [weiweb3](https://weiweb3.com/) `Token` smart contracts.
 
-The document is written for technical and non-technical readers. To ask further questions about any of thirdweb’s `Drop`, please join the [thirdweb discord](https://discord.gg/thirdweb) or create a github issue.
+The document is written for technical and non-technical readers. To ask further questions about any of weiweb3’s `Drop`, please join the [weiweb3 discord](https://discord.gg/weiweb3) or create a github issue.
 
 ---
 
 ## Background
 
-The 'signature minting' mechanism used in [thirdweb](https://thirdweb.com/) `Token` smart contracts is a way for a contract admin to
+The 'signature minting' mechanism used in [weiweb3](https://weiweb3.com/) `Token` smart contracts is a way for a contract admin to
 authorize an external party's request to mint tokens on the admin's contract. At a high level, this means you can authorize some external party to mint tokens on your contract, and specify what exactly will be minted by that external party.
 
 A contract admin signs a 'payload' or 'mint request' which specifies parameters around a mint e.g. which address should tokens be minted to, what price should be collected in exchange for the minted tokens, etc.
@@ -28,9 +28,9 @@ We’ve observed that there are largely three distinct contexts under which one 
     1. The nature of tokens to be minted by the audience is pre-determined by the contract admin. E.g. a 10k NFT drop where the contents of the NFTs to be minted by the audience is already known and determined by the contract admin before the audience comes in to mint NFTs.
     2. The nature of tokens to be minted by the audience is *not* pre-determined by the contract admin. E.g. a course ‘certificate’ dynamically generated with the name of the course participant, to be minted by the course participant at the time of course completion.
 
-The thirdweb `Drop` contracts serve the cases described in 2(i).
+The weiweb3 `Drop` contracts serve the cases described in 2(i).
 
-The thirdweb `Token` contracts serve the cases described in (1) and 2(ii). And the 'signature minting' mechanism is particularly designed to serve the case described in 2(ii).
+The weiweb3 `Token` contracts serve the cases described in (1) and 2(ii). And the 'signature minting' mechanism is particularly designed to serve the case described in 2(ii).
 
 ## Technical Details
 
@@ -97,4 +97,4 @@ Once verified, tokens are minted according to the information specified in the p
 
 ## Authors
 - [nkrishang](https://github.com/nkrishang)
-- [thirdweb team](https://github.com/thirdweb-dev)
+- [weiweb3 team](https://github.com/weiweb3)

@@ -5,7 +5,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/IERC721Upgradeable.sol"
 import "./IDropClaimCondition.sol";
 
 /**
- *  Thirdweb's 'Drop' contracts are distribution mechanisms for tokens. The
+ *  Weiweb3's 'Drop' contracts are distribution mechanisms for tokens. The
  *  `DropERC721` contract is a distribution mechanism for ERC721 tokens.
  *
  *  A minter wallet (i.e. holder of `MINTER_ROLE`) can (lazy)mint 'n' tokens
@@ -14,7 +14,7 @@ import "./IDropClaimCondition.sol";
  *  `{tokenId}` of the respective token. (e.g. "ipsf://Qmece.../1").
  *
  *  A minter can choose to lazy mint 'delayed-reveal' tokens. More on 'delayed-reveal'
- *  tokens in [this article](https://blog.thirdweb.com/delayed-reveal-nfts).
+ *  tokens in [this article](https://blog.weiweb3.com/delayed-reveal-nfts).
  *
  *  A contract admin (i.e. holder of `DEFAULT_ADMIN_ROLE`) can create claim conditions
  *  with non-overlapping time windows, and accounts can claim the tokens according to

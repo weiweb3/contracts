@@ -2,7 +2,7 @@
 pragma solidity ^0.8.11;
 
 /**
- *  Thirdweb's `Airdrop` contracts provide a lightweight and easy to use mechanism
+ *  Weiweb3's `Airdrop` contracts provide a lightweight and easy to use mechanism
  *  to drop tokens.
  *
  *  `AirdropERC721Claimable` contract is an airdrop contract for ERC721 tokens. It follows a

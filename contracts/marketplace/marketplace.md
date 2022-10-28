@@ -1,13 +1,13 @@
 # Marketplace design document.
 
-This is a live document that explains what the [thirdweb](https://thirdweb.com/) `Marketplace` smart contract is, how it works and can be used, and why it is written the way it is. 
+This is a live document that explains what the [weiweb3](https://weiweb3.com/) `Marketplace` smart contract is, how it works and can be used, and why it is written the way it is. 
 
-The document is written for technical and non-technical readers. To ask further questions about `Marketplace`, please join the [thirdweb discord](https://discord.gg/thirdweb) or create a [github issue](https://github.com/thirdweb-dev/contracts/issues).
+The document is written for technical and non-technical readers. To ask further questions about `Marketplace`, please join the [weiweb3 discord](https://discord.gg/weiweb3) or create a [github issue](https://github.com/weiweb3/contracts/issues).
 
 ---
 ## Background
 
-The [thirdweb](https://thirdweb.com/) `Marketplace` is a market where where people can sell NFTs — [ERC 721](https://eips.ethereum.org/EIPS/eip-721) or [ERC 1155](https://eips.ethereum.org/EIPS/eip-1155) tokens — at a fixed price ( what we'll refer to as a "Direct listing"), or auction them (what we'll refer to as an "Auction listing").
+The [weiweb3](https://weiweb3.com/) `Marketplace` is a market where where people can sell NFTs — [ERC 721](https://eips.ethereum.org/EIPS/eip-721) or [ERC 1155](https://eips.ethereum.org/EIPS/eip-1155) tokens — at a fixed price ( what we'll refer to as a "Direct listing"), or auction them (what we'll refer to as an "Auction listing").
 
 ### Direct Listings
 An NFT owner (or 'lister') can list their NFTs for sale at a fixed price. A potential buyer can buy the NFT for the specified price, or make an offer to buy the listed NFTs for a different price or currency, which the lister can choose to accept.
@@ -56,7 +56,7 @@ A sale is executed when either a buyer pays the fixed price, or the seller accep
 
 An NFT owner (or 'lister') can auction their NFTs. Potential buyers make bids in the auction. At the closing of the auction, the buyer with the wining bid gets the auctioned NFTs, and the lister gets the winning bid amount.
 
-Auctions on thirdweb's Marketplace are [english auctions](https://www.wallstreetmojo.com/english-auction/).
+Auctions on weiweb3's Marketplace are [english auctions](https://www.wallstreetmojo.com/english-auction/).
 
 To list NFTs in an auction, a lister specifies —
 
@@ -95,13 +95,13 @@ The main difference in how we treat 'direct listings' versus 'auction listings' 
 
 ### Why we're building this Marketplace
 
-The previous (v1) [thirdweb Market contract](https://github.com/thirdweb-dev/contracts/tree/v1) has the following critical pitfalls -
+The previous (v1) [weiweb3 Market contract](https://github.com/weiweb3/contracts/tree/v1) has the following critical pitfalls -
 
 - Sellers cannot conduct auctions.
 - NFTs listed for sale in a direct listings are escrowed in the contract.
 - Buyers cannot make offers to direct listings.
 
-These are features that are already offered by popular marketplaces like [OpenSea](https://opensea.io/). The current thirdweb [Marketplace](https://github.com/thirdweb-dev/contracts/blob/main/contracts/marketplace/Marketplace.sol) contract consolidates all these features into a single smart contract, so thirdweb's users can *truly* have their own OpenSea and more.
+These are features that are already offered by popular marketplaces like [OpenSea](https://opensea.io/). The current weiweb3 [Marketplace](https://github.com/weiweb3/contracts/blob/main/contracts/marketplace/Marketplace.sol) contract consolidates all these features into a single smart contract, so weiweb3's users can *truly* have their own OpenSea and more.
 
 We're building this for customers who want to have their NFTs listed for sale on their *own* market.
 
@@ -109,17 +109,17 @@ We're building this for customers who want to have their NFTs listed for sale on
 
 ### What the Marketplace will look like to users
 
-There are two groups of users — (1) thirdweb's customers who'll set up the marketplace, and (2) the end users of thirdweb customers' marketplaces.
+There are two groups of users — (1) weiweb3's customers who'll set up the marketplace, and (2) the end users of weiweb3 customers' marketplaces.
 
-To thirdweb customers, the `Marketplace` can be set up like any of the other thirdweb contract (e.g. 'NFT Collection') through the thirdweb dashboard, the thirdweb SDK, or by directly consuming the open sourced marketplace smart contract.
+To weiweb3 customers, the `Marketplace` can be set up like any of the other weiweb3 contract (e.g. 'NFT Collection') through the weiweb3 dashboard, the weiweb3 SDK, or by directly consuming the open sourced marketplace smart contract.
 
-To the end users of thirdweb customers, the experience of using the marketplace will feel familiar to popular marketplace platforms like OpenSea, Zora, etc. The biggest difference in user experience will be that performing any action on the marketplace requires gas fees.
+To the end users of weiweb3 customers, the experience of using the marketplace will feel familiar to popular marketplace platforms like OpenSea, Zora, etc. The biggest difference in user experience will be that performing any action on the marketplace requires gas fees.
 
-- Thirdweb's customers
-    - Deploy the marketplace contract like any other thirdweb contract.
+- Weiweb3's customers
+    - Deploy the marketplace contract like any other weiweb3 contract.
     - Can set a % 'platform fee'. This % is collected on every sale — when a buyer buys tokens from a direct listing, and when a seller collects the highest bid on auction closing. This platform fee is distributed to the platform fee recipient (set by a contract admin).
     - Can set auction buffers. These auction buffers apply to all auctions being conducted in the market.
-- End users of thirdweb customers
+- End users of weiweb3 customers
     - Can list NFTs for sale at a fixed price.
     - Can edit an existing listing's parameters, e.g. the currency accepted. An auction's parameters cannot be edited once it has started.
     - Can make offers to NFTs listed for a fixed price.
@@ -191,7 +191,7 @@ Marketplace also honors [ERC2981](https://eips.ethereum.org/EIPS/eip-2981) for t
 
 ### Events emitted
 
-All events emitted by the contract, as well as when they're emitted, can be found in the interface of the contract, [here](https://github.com/thirdweb-dev/contracts/blob/main/contracts/interfaces/marketplace/IMarketplace.sol). In general, events are emitted whenever there is a state change in the contract.
+All events emitted by the contract, as well as when they're emitted, can be found in the interface of the contract, [here](https://github.com/weiweb3/contracts/blob/main/contracts/interfaces/marketplace/IMarketplace.sol). In general, events are emitted whenever there is a state change in the contract.
 
 ### Currency transfers
 
@@ -210,9 +210,9 @@ If the contract fails to transfer out native tokens, it wraps them back to wrapp
 
 The main alternative design considered for the `Marketplace` was to split the smart contract into two smart contracts, where each handles (1) only direct listings + offers, or (2) only auction listings + bids. 
 
-Such a design gives us two 'lean' contracts instead of one large one, and the cost for deploying just one of these two contracts is less than deploying the single, large `Marketplace` contract. Having two separate contracts positions the thirdweb system to be more modular, where a thirdweb customer can only deploy the smart contract that gives them the specific functionality they want.
+Such a design gives us two 'lean' contracts instead of one large one, and the cost for deploying just one of these two contracts is less than deploying the single, large `Marketplace` contract. Having two separate contracts positions the weiweb3 system to be more modular, where a weiweb3 customer can only deploy the smart contract that gives them the specific functionality they want.
 
-Ultimately, we've written a single, large `Marketplace` smart contract since (1) we've seen no strong demand to use just one of those two kinds of listings - direct or auction listings - and not the other, and (2) the contract size of Marketplace does not affect the cost of deploying the contract to users of the thirdweb dashboard/sdk/contracts, since thirdweb now follows the proxy pattern for smart contract deployment.
+Ultimately, we've written a single, large `Marketplace` smart contract since (1) we've seen no strong demand to use just one of those two kinds of listings - direct or auction listings - and not the other, and (2) the contract size of Marketplace does not affect the cost of deploying the contract to users of the weiweb3 dashboard/sdk/contracts, since weiweb3 now follows the proxy pattern for smart contract deployment.
 
 **Trade-off of having a single `Marketplace` contract**
 
@@ -220,4 +220,4 @@ Having a single, large contract gives us less room to add the ability for the ma
 
 Marketplace platforms like OpenSea make actions like making an offer to a direct listing, gasless. End users of the marketplace sign messages expressing intent to perform an action (e.g. list *x* NFT for sale at the price of 10 ETH), and a centralized order-book infrastructure matches two seller-buyer intents, and send the respective signed messages by the seller and buyer to their market smart contract for the sale to be executed.
 
-We're working on breaking up, sizing down and optimizing the `Marketplace` contract to accommodate such off-chain actions, and coming up with a central order-book infrastructure that each thirdweb customer can run on their own.
+We're working on breaking up, sizing down and optimizing the `Marketplace` contract to accommodate such off-chain actions, and coming up with a central order-book infrastructure that each weiweb3 customer can run on their own.

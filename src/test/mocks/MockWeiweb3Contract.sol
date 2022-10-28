@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: Apache-2.0
 pragma solidity ^0.8.11;
 
-import "contracts/interfaces/IThirdwebContract.sol";
+import "contracts/interfaces/IWeiweb3Contract.sol";
 
 // solhint-disable const-name-snakecase
-contract MockThirdwebContract is IThirdwebContract {
+contract MockWeiweb3Contract is IWeiweb3Contract {
     string public contractURI;
     bytes32 public constant contractType = bytes32("MOCK");
     uint8 public constant contractVersion = 1;
@@ -14,7 +14,7 @@ contract MockThirdwebContract is IThirdwebContract {
     }
 }
 
-contract MockThirdwebContractV2 is IThirdwebContract {
+contract MockWeiweb3ContractV2 is IWeiweb3Contract {
     string public contractURI;
     bytes32 public constant contractType = bytes32("MOCK");
     uint8 public constant contractVersion = 2;

@@ -3,7 +3,7 @@ pragma solidity ^0.8.11;
 
 // Base
 import "./openzeppelin-presets/finance/PaymentSplitterUpgradeable.sol";
-import "./interfaces/IThirdwebContract.sol";
+import "./interfaces/IWeiweb3Contract.sol";
 
 // Meta-tx
 import "./openzeppelin-presets/metatx/ERC2771ContextUpgradeable.sol";
@@ -16,7 +16,7 @@ import "@openzeppelin/contracts-upgradeable/utils/MulticallUpgradeable.sol";
 import "./lib/FeeType.sol";
 
 contract Split is
-    IThirdwebContract,
+    IWeiweb3Contract,
     Initializable,
     MulticallUpgradeable,
     ERC2771ContextUpgradeable,
@@ -26,7 +26,7 @@ contract Split is
     bytes32 private constant MODULE_TYPE = bytes32("Split");
     uint128 private constant VERSION = 1;
 
-    /// @dev Max bps in the thirdweb system
+    /// @dev Max bps in the weiweb3 system
     uint128 private constant MAX_BPS = 10_000;
 
     /// @dev Contract level metadata.

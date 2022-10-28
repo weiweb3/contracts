@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 // [ DEPRECATED CONTRACT: use `contracts/extension/interface/IDelayedReveal.sol` instead ]
 
 /**
- *  Thirdweb's `DelayedReveal` is a contract extension for base NFT contracts. It lets you create batches of
- *  'delayed-reveal' NFTs. You can learn more about the usage of delayed reveal NFTs here - https://blog.thirdweb.com/delayed-reveal-nfts
+ *  Weiweb3's `DelayedReveal` is a contract extension for base NFT contracts. It lets you create batches of
+ *  'delayed-reveal' NFTs. You can learn more about the usage of delayed reveal NFTs here - https://blog.weiweb3.com/delayed-reveal-nfts
  */
 
 interface IDelayedRevealDeprecated {

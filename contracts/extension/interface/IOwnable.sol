@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 /**
- *  Thirdweb's `Ownable` is a contract extension to be used with any base contract. It exposes functions for setting and reading
+ *  Weiweb3's `Ownable` is a contract extension to be used with any base contract. It exposes functions for setting and reading
  *  who the 'owner' of the inheriting smart contract is, and lets the inheriting contract perform conditional logic that uses
  *  information about who the contract's owner is.
  */

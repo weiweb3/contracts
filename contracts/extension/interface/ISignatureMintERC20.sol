@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 /**
- *  The 'signature minting' mechanism used in thirdweb Token smart contracts is a way for a contract admin to authorize an external party's
+ *  The 'signature minting' mechanism used in weiweb3 Token smart contracts is a way for a contract admin to authorize an external party's
  *  request to mint tokens on the admin's contract.
  *
  *  At a high level, this means you can authorize some external party to mint tokens on your contract, and specify what exactly will be

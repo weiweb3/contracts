@@ -4,7 +4,7 @@ pragma solidity ^0.8.11;
 import "../extension/interface/ITokenBundle.sol";
 
 /**
- *  Thirdweb's Multiwrap contract lets you wrap arbitrary ERC20, ERC721 and ERC1155
+ *  Weiweb3's Multiwrap contract lets you wrap arbitrary ERC20, ERC721 and ERC1155
  *  tokens you own into a single wrapped token / NFT.
  *
  *  A wrapped NFT can be unwrapped i.e. burned in exchange for its underlying contents.

@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { SUPPORTED_CHAIN_ID, ThirdwebSDK } from "@thirdweb-dev/sdk";
+import { SUPPORTED_CHAIN_ID, Weiweb3SDK } from "@weiweb3/sdk";
 import { readFileSync } from "fs";
 import { chainIdToName } from "./constants";
 
@@ -9,7 +9,7 @@ import { chainIdToName } from "./constants";
 const releasedContractName = "Multiwrap";
 const privateKey: string = process.env.DEPLOYER_KEY as string; // should be the correct deployer key
 
-const polygonSDK = ThirdwebSDK.fromPrivateKey(privateKey, "polygon");
+const polygonSDK = Weiweb3SDK.fromPrivateKey(privateKey, "polygon");
 
 async function main() {
   const releaser = await polygonSDK.wallet.getAddress();
@@ -42,7 +42,7 @@ async function main() {
         continue;
       }
       
-      const chainSDK = ThirdwebSDK.fromPrivateKey(privateKey, chainName);
+      const chainSDK = Weiweb3SDK.fromPrivateKey(privateKey, chainName);
       const factoryAddr = prevReleaseMetadata?.factoryDeploymentData?.factoryAddresses?.[chainId];
       if (implementation && factoryAddr) {
         const factory = await chainSDK.getContractFromAbi(
@@ -70,7 +70,7 @@ async function main() {
   }
 
   console.log("All done.");
-  console.log("Release page:", `https://thirdweb.com/${releaser}/${releasedContractName}`);
+  console.log("Release page:", `https://weiweb3.com/${releaser}/${releasedContractName}`);
 }
 
 main()

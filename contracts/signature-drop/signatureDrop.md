@@ -1,18 +1,18 @@
 # SignatureDrop design document.
 
-This is a live document that explains what the [thirdweb](https://thirdweb.com/) `SignatureDrop` smart contract is, how it works and can be used, and why it is designed the way it is.
+This is a live document that explains what the [weiweb3](https://weiweb3.com/) `SignatureDrop` smart contract is, how it works and can be used, and why it is designed the way it is.
 
-The document is written for technical and non-technical readers. To ask further questions about thirdweb’s `SignatureDrop` contract, please join the [thirdweb discord](https://discord.gg/thirdweb) or create a [github issue](https://github.com/thirdweb-dev/contracts/issues).
+The document is written for technical and non-technical readers. To ask further questions about weiweb3’s `SignatureDrop` contract, please join the [weiweb3 discord](https://discord.gg/weiweb3) or create a [github issue](https://github.com/weiweb3/contracts/issues).
 
 ---
 
 ## Background
 
-The thirdweb [`Drop`](https://portal.thirdweb.com/contracts/design/Drop) and [signature minting](https://portal.thirdweb.com/contracts/design/SignatureMint) are distribution mechanisms for tokens. 
+The weiweb3 [`Drop`](https://portal.weiweb3.com/contracts/design/Drop) and [signature minting](https://portal.weiweb3.com/contracts/design/SignatureMint) are distribution mechanisms for tokens. 
 
 The `Drop` contracts are meant to be used when the goal of the contract creator is for an audience to come in and claim tokens within certain restrictions e.g. — ‘only addresses in an allowlist can mint tokens’, or ‘minters must pay **x** amount of price in **y** currency to mint’, etc.
 
-Built-in contracts that implement [signature minting](https://portal.thirdweb.com/contracts/design/SignatureMint) are meant to be used when the restrictions around a wallet's minting tokens are not pre-defined, like in `Drop`. With signature minting, a contract creator can set custom restrictions around a token's minting, such as a price, at the very time that a wallet wants to mint tokens.
+Built-in contracts that implement [signature minting](https://portal.weiweb3.com/contracts/design/SignatureMint) are meant to be used when the restrictions around a wallet's minting tokens are not pre-defined, like in `Drop`. With signature minting, a contract creator can set custom restrictions around a token's minting, such as a price, at the very time that a wallet wants to mint tokens.
 
 The `SignatureDrop` contract supports both distribution mechanisms - of drop and signature minting - in the same contract.
 
@@ -26,7 +26,7 @@ The contract creator 'lazy mints' i.e. defines the content for a batch of NFTs (
 
 The `SignatureDrop` contract supports both distribution mechanisms - of drop and signature minting - in the same contract. The following is an end-to-end flow, from the contract admin actions, to an end user wallet's actions when minting tokens:
 
-- A contract admin (particularly, a wallet with `MINTER_ROLE`) 'lazy mints' i.e. defines the content for a batch of NFTs. This batch of NFTs can optionally be a batch of [delayed-reveal](https://blog.thirdweb.com/delayed-reveal-nfts) NFTs.
+- A contract admin (particularly, a wallet with `MINTER_ROLE`) 'lazy mints' i.e. defines the content for a batch of NFTs. This batch of NFTs can optionally be a batch of [delayed-reveal](https://blog.weiweb3.com/delayed-reveal-nfts) NFTs.
 - A contract admin (particularly, a wallet with `DEFAULT_ADMIN_ROLE`) sets a claim phase, which defines restrictions around minting NFTs from the lazy minted batch of NFTs. 
   - **Note:** unlike the `NFT Drop` or `Edition Drop` contracts, where the contract admin can set a series of claim phases at once, the `SignatureDrop` contract lets the contract admin set only *one* claim phase at a time.
 - A wallet claims tokens from the batch of lazy minted tokens in one of two ways:
@@ -35,11 +35,11 @@ The `SignatureDrop` contract supports both distribution mechanisms - of drop and
 
 ### Use cases for `SignatureDrop`
 
-We built our `Drop` contracts for the following [reason](https://portal.thirdweb.com/contracts/design/Drop#why-were-building-drop). The limitation of our `Drop` contracts is that all wallets in an audience attempting to claim tokens are subject to the same restrictions in the single, active claim phase at any moment.
+We built our `Drop` contracts for the following [reason](https://portal.weiweb3.com/contracts/design/Drop#why-were-building-drop). The limitation of our `Drop` contracts is that all wallets in an audience attempting to claim tokens are subject to the same restrictions in the single, active claim phase at any moment.
 
-In the `SignatureDrop` contract, a wallet can now claim tokens [via a signature](https://portal.thirdweb.com/contracts/design/SignatureMint#background) from an authorized wallet, from the same pool of lazy minted tokens which can be claimed via the `Drop` mechanism. This means a contract owner can now set custom restrictions for a wallet to claim tokens, that may be different from the active claim phase at the time.
+In the `SignatureDrop` contract, a wallet can now claim tokens [via a signature](https://portal.weiweb3.com/contracts/design/SignatureMint#background) from an authorized wallet, from the same pool of lazy minted tokens which can be claimed via the `Drop` mechanism. This means a contract owner can now set custom restrictions for a wallet to claim tokens, that may be different from the active claim phase at the time.
 
-An example of using this added feature of the `SignatureDrop` contract is when you want to maintain an allowlist off-chain i.e. not in the claim phase details, which are stored on-chain, and difficult to update once set. The contract's claim phase can define a common set of restrictions that any wallet not in your allowlist will mint tokens under. And using [signature minting](https://portal.thirdweb.com/contracts/design/SignatureMint), you can apply custom restrictions around minting, such as a price, currency and so on, on a per wallet basis, for wallets in your off-chain allowlist.
+An example of using this added feature of the `SignatureDrop` contract is when you want to maintain an allowlist off-chain i.e. not in the claim phase details, which are stored on-chain, and difficult to update once set. The contract's claim phase can define a common set of restrictions that any wallet not in your allowlist will mint tokens under. And using [signature minting](https://portal.weiweb3.com/contracts/design/SignatureMint), you can apply custom restrictions around minting, such as a price, currency and so on, on a per wallet basis, for wallets in your off-chain allowlist.
 
 ## Technical Details
 
@@ -184,7 +184,7 @@ function setClaimConditions(
 | _condition | ClaimCondition | Defines restrictions around claiming lazy minted tokens. |
 | resetClaimEligibility | bool | Whether to reset lastClaimTimestamp and usedAllowlistSpot values when setting a claim conditions. |
 
-You can read into the technical details of setting claim conditions in the [`Drop` design document](https://portal.thirdweb.com/contracts/design/Drop#setting-claim-conditions).
+You can read into the technical details of setting claim conditions in the [`Drop` design document](https://portal.weiweb3.com/contracts/design/Drop#setting-claim-conditions).
 
 
 ### Claiming tokens via `Drop`
@@ -229,4 +229,4 @@ What does **Type (Switch / !Switch)** mean?
 
 ## Authors
 - [kumaryash90](https://github.com/kumaryash90)
-- [thirdweb team](https://github.com/thirdweb-dev)
+- [weiweb3 team](https://github.com/weiweb3)

@@ -4,7 +4,7 @@
 
 
 
-Thirdweb&#39;s `Airdrop` contracts provide a lightweight and easy to use mechanism  to drop tokens.  `AirdropERC1155` contract is an airdrop contract for ERC1155 tokens. It follows a  push mechanism for transfer of tokens to intended recipients.
+Weiweb3&#39;s `Airdrop` contracts provide a lightweight and easy to use mechanism  to drop tokens.  `AirdropERC1155` contract is an airdrop contract for ERC1155 tokens. It follows a  push mechanism for transfer of tokens to intended recipients.
 
 
 

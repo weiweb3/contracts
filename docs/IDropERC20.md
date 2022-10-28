@@ -4,7 +4,7 @@
 
 
 
-Thirdweb&#39;s &#39;Drop&#39; contracts are distribution mechanisms for tokens. The  `DropERC20` contract is a distribution mechanism for ERC20 tokens.  A contract admin (i.e. holder of `DEFAULT_ADMIN_ROLE`) can create claim conditions  with non-overlapping time windows, and accounts can claim the tokens according to  restrictions defined in the claim condition that is active at the time of the transaction.
+Weiweb3&#39;s &#39;Drop&#39; contracts are distribution mechanisms for tokens. The  `DropERC20` contract is a distribution mechanism for ERC20 tokens.  A contract admin (i.e. holder of `DEFAULT_ADMIN_ROLE`) can create claim conditions  with non-overlapping time windows, and accounts can claim the tokens according to  restrictions defined in the claim condition that is active at the time of the transaction.
 
 
 

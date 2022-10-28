@@ -2,7 +2,7 @@
 pragma solidity ^0.8.11;
 
 // Test imports
-import "./mocks/MockThirdwebContract.sol";
+import "./mocks/MockWeiweb3Contract.sol";
 import "./utils/BaseTest.sol";
 import "contracts/TWFee.sol";
 
@@ -19,7 +19,7 @@ contract TWFeeTest is BaseTest {
     // Helper contracts
     TWRegistry internal twRegistry;
     TWFactory internal twFactory;
-    MockThirdwebContract internal mockModule;
+    MockWeiweb3Contract internal mockModule;
 
     // Actors
     address internal mockModuleDeployer;
@@ -30,7 +30,7 @@ contract TWFeeTest is BaseTest {
 
     // Test params
     address internal trustedForwarder = address(0x4);
-    address internal thirdwebTreasury = address(0x5);
+    address internal weiweb3Treasury = address(0x5);
 
     //  =====   Set up  =====
 
